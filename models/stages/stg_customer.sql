@@ -2,10 +2,10 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Customer'
+    'STAGE': 'Customer'
 hashed_columns: 
     hk_customer_h:
-        - c_custkey
+        - c_custkeydbt 
     hk_nation_h:
         - c_nationkey
     hk_customer_nation_l:
@@ -24,7 +24,7 @@ hashed_columns:
             - c_mktsegment
             - c_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Customer'
+rsrc: '!STAGE.Customer'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}

@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'LineItem'
+    'STAGE': 'LineItem'
 hashed_columns: 
     hk_lineitem_nl:
         - l_orderkey
@@ -31,7 +31,7 @@ hashed_columns:
             - l_shipmode
             - l_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.LineItem'
+rsrc: '!STAGE.LineItem'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}

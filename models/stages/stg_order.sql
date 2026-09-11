@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Orders'
+    'STAGE': 'Orders'
 hashed_columns: 
     hk_order_h:
         - o_orderkey
@@ -23,7 +23,7 @@ hashed_columns:
 missing_columns:
     legacy_orderkey: 'STRING'
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Orders'
+rsrc: '!STAGE.Orders'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}

@@ -4,10 +4,10 @@
 tracked_hashkey: hk_customer_h
 source_models:
     stg_customer:
-        rsrc_static: 'TPC_H_SF1.Customer'
+        rsrc_static: 'STAGE.Customer'
     stg_order:
         hk_column: hk_customer_h
-        rsrc_static: 'TPC_H_SF1.Orders'
+        rsrc_static: 'STAGE.Orders'
 {%- endset -%}    
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

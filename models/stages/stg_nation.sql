@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Nation'
+    'STAGE': 'Nation'
 hashed_columns: 
     hk_nation_h:
         - n_nationkey
@@ -17,7 +17,7 @@ hashed_columns:
             - n_name
             - n_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Nation'
+rsrc: '!STAGE.Nation'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}

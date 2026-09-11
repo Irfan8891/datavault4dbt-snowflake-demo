@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Supplier'
+    'STAGE': 'Supplier'
 hashed_columns: 
     hk_supplier_h:
         - s_suppkey
@@ -23,7 +23,7 @@ hashed_columns:
             - s_acctbal
             - s_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Supplier'
+rsrc: '!STAGE.Supplier'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}

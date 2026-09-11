@@ -3,13 +3,13 @@
 {%- set yaml_metadata -%}
 source_models: 
     stg_nation:
-        rsrc_static: 'TPC_H_SF1.Nation'
+        rsrc_static: 'STAGE.Nation'
     stg_customer:
         bk_columns: c_nationkey
-        rsrc_static: 'TPC_H_SF1.Customer'
+        rsrc_static: 'STAGE.Customer'
     stg_supplier:
         bk_columns: s_nationkey
-        rsrc_static: 'TPC_H_SF1.Supplier'
+        rsrc_static: 'STAGE.Supplier'
 hashkey: hk_nation_h
 business_keys: n_nationkey
 {%- endset -%}      

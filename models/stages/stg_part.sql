@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Part'
+    'STAGE': 'Part'
 hashed_columns: 
     hk_part_h:
         - p_partkey
@@ -18,7 +18,7 @@ hashed_columns:
             - p_retailprice
             - p_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Part'
+rsrc: '!STAGE.Part'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}
