@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: TPC-H_SF1
+  - name: STAGE
     database: MY_DBT_PROJECT
     schema: STAGE
     tables:

@@ -5,7 +5,7 @@ source_model:
     'STAGE': 'Customer'
 hashed_columns: 
     hk_customer_h:
-        - c_custkeydbt 
+        - c_custkey
     hk_nation_h:
         - c_nationkey
     hk_customer_nation_l:
