@@ -1,0 +1,15 @@
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      DBT_PROJECT_DIR: /opt/airflow/project
+    ports:
+      - "8081:8080"
+    volumes:
+      - .:/opt/airflow/project
+      - ./dags:/opt/airflow/dags
+      - ${USERPROFILE}/.dbt:/opt/airflow/config/.dbt:ro
+    command: standalone

@@ -1,3 +1,4 @@
+import os
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -6,7 +7,9 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 
-DBT_PROJECT_DIR = Path(__file__).resolve().parents[1]
+DBT_PROJECT_DIR = Path(
+    os.environ.get("DBT_PROJECT_DIR", Path(__file__).resolve().parents[1])
+)
 DBT_PROFILES_DIR = Path("/opt/airflow/config/.dbt")
 
 

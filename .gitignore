@@ -2,4 +2,5 @@
 target/
 dbt_packages/
 logs/
+__pycache__/
 package-lock.yml
